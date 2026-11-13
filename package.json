@@ -9,7 +9,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "check": "nuxt prepare && pnpm run lint && pnpm run typecheck && pnpm run build"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.147",
