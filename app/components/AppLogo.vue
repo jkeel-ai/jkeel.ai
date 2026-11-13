@@ -1,0 +1,20 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 64"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M32 1Q33 6 38 7Q33 8 32 13Q31 8 26 7Q31 6 32 1Z" />
+    <path
+      d="M25 16v11a6 6 0 0 1-12 0"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="6"
+    />
+    <path d="M30.5 15h3v25h-3z" />
+    <path d="M36 15L53 36H36Z" />
+    <path d="M10 40H54A22 22 0 0 1 53.63 44C47 41.5 39 42.5 32 46S17 50.5 10.37 44A22 22 0 0 1 10 40Z" />
+    <path d="M11.14 47C17.5 53.5 25 52.5 32 49S47 44.5 52.86 47A22 22 0 0 1 11.14 47Z" />
+  </svg>
+</template>
