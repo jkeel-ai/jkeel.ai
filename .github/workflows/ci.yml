@@ -19,4 +19,9 @@ jobs:
       smoke-path: /
       coolify-url: ${{ vars.COOLIFY_URL }}
       coolify-app-uuid: ${{ vars.COOLIFY_APP_UUID }}
-    secrets: inherit
+    # Named one by one: `secrets: inherit` only works when the called workflow
+    # belongs to the same owner, and this one lives under another account.
+    secrets:
+      REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+      REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+      COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
