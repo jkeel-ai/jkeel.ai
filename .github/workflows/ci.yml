@@ -1,0 +1,22 @@
+name: ci
+
+# Check, build the image, push it to the registry and redeploy on Coolify.
+# Pushes and deploys happen only from main; other branches stop after the build.
+on:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  pipeline:
+    uses: vernaillen/workflows/.github/workflows/coolify-deploy.yml@v1
+    with:
+      image-name: jkeel-ai
+      smoke-port: 3000
+      smoke-path: /
+      coolify-url: ${{ vars.COOLIFY_URL }}
+      coolify-app-uuid: ${{ vars.COOLIFY_APP_UUID }}
+    secrets: inherit
