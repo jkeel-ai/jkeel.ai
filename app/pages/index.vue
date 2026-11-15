@@ -26,7 +26,12 @@ const problems = [
   {
     icon: 'i-lucide-scroll-text',
     title: 'Rules are only advice',
-    description: 'A rules file tells the agent what you want. Nothing stops it when it gets that wrong. A harness adds checks that do.'
+    description: 'A rules file tells the agent what you want. Nothing stops it when it gets that wrong. A safety harness is the set of guardrails around the agent that does: hooks, permissions and CI checks.'
+  },
+  {
+    icon: 'i-lucide-shield-off',
+    title: 'Checks can be switched off',
+    description: 'To make a build pass, an agent can disable a test, lower a coverage minimum or silence a warning. Your quality checks need a guard too.'
   },
   {
     icon: 'i-lucide-circle-help',
@@ -37,14 +42,9 @@ const problems = [
 
 const templateParts = [
   {
-    icon: 'i-lucide-scroll-text',
-    title: 'Team rules',
-    description: 'Ready-made rules files (CLAUDE.md and AGENTS.md) written for Java and Spring Boot projects.'
-  },
-  {
     icon: 'i-lucide-shield-check',
     title: 'Safety hooks',
-    description: 'Small scripts that check each agent action before it runs. They block deleting files outside the project, pushing to main, touching secrets and editing CI or build credentials.'
+    description: 'Small scripts that check each agent action before it runs. They block deleting files outside the project, pushing to main, touching secrets and editing CI or build credentials. They also guard themselves, and when a hook cannot decide, it blocks.'
   },
   {
     icon: 'i-lucide-lock-keyhole',
@@ -54,7 +54,12 @@ const templateParts = [
   {
     icon: 'i-lucide-git-pull-request',
     title: 'Review check',
-    description: 'A CI check that flags AI-written changes, so a person always reviews them before they merge.'
+    description: 'A CI check that flags AI-written changes, and changes that weaken one of your own checks, so a person always reviews them before they merge.'
+  },
+  {
+    icon: 'i-lucide-scroll-text',
+    title: 'Team rules',
+    description: 'Ready-made rules files (CLAUDE.md and AGENTS.md) written for Java and Spring Boot projects.'
   },
   {
     icon: 'i-lucide-flask-conical',
@@ -64,6 +69,11 @@ const templateParts = [
 ]
 
 const principles = [
+  {
+    icon: 'i-lucide-cog',
+    title: 'Enforced in code',
+    description: 'Rules files and skills are guidance. Hooks, permissions and CI are enforcement. jKeel relies on the second group for anything that matters.'
+  },
   {
     icon: 'i-lucide-house',
     title: 'Nothing leaves your environment',
@@ -75,14 +85,19 @@ const principles = [
     description: 'Read every rule and every hook before you use it. No black box between your team and your code.'
   },
   {
-    icon: 'i-lucide-coffee',
-    title: 'Made for Java teams',
-    description: 'Java 21 and up, Spring Boot and Maven first. Gradle support comes later.'
-  },
-  {
     icon: 'i-lucide-life-buoy',
     title: 'Honest about limits',
     description: 'Hooks are a seatbelt, not a sandbox. We say what they catch, what they miss and what you still need, such as branch protection.'
+  },
+  {
+    icon: 'i-lucide-anchor',
+    title: 'Safety, not code quality',
+    description: 'jKeel guards what the agent may do. It does not decide what good code is: it protects the quality checks your team already has.'
+  },
+  {
+    icon: 'i-lucide-coffee',
+    title: 'Made for Java teams',
+    description: 'Java 21 and up, Spring Boot and Maven first. Gradle support comes later.'
   }
 ]
 </script>
@@ -90,7 +105,7 @@ const principles = [
 <template>
   <div>
     <UPageHero
-      description="The safe AI harness for Java teams: the rules, permissions, automatic checks and review steps that let you use an AI coding agent on a real codebase without lowering quality."
+      description="The safety harness for AI coding agents, built for Java teams. Rules, permissions, automatic checks and review steps, so you can use an AI coding agent on a real codebase and stay in control."
       :links="heroLinks"
     >
       <template #headline>
