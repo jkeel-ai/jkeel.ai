@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const title = 'jKeel: the safe AI harness for Java teams'
-const description = 'AI makes waves. jKeel keeps you steady. Rules, safety hooks, permissions and review steps that let Java teams use an AI coding agent without lowering quality.'
+const title = 'jKeel: the safety harness for AI coding agents, built for Java teams'
+const description = 'AI makes waves. jKeel keeps you steady. Rules, safety hooks, permissions and review steps, so Java teams can use an AI coding agent on a real codebase and stay in control.'
 const githubUrl = 'https://github.com/jkeel-ai'
 
 useHead({
